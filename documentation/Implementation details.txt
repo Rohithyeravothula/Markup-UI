@@ -1,0 +1,41 @@
+
+document: a document with text (collection of sentences)
+		ex:
+			document = {
+			"id" -> "12345",
+			"body" -> "lorem ipsum, lorem ipsumlorem ipsum. lorem ipsumlorem ipsum"
+			}
+
+sentences: text split by full stops (.)
+		ex: 
+			sentense = {
+			"id" -> document id ,
+			"body" -> "Due to heavy rains in LA, the Airport will remain closed"
+			}
+			
+markup: contains sentence, markups
+        ex: 
+            markup = {
+            "id" -> document id
+            "sentense" -> "Due to heavy rains in LA, the Airport will remain closed"
+            "cause" -> ["heavy rains"]
+            "effect" -> ["Airport will remain closed"]
+            }
+
+
+
+Web page: built using HTML, CSS and JavaScript
+functionalities: 
+1) static page to display list of documents, with the ability to select a document
+2) static page to display selected document, sentences and option to mark a span and classify into either cause or effect
+3) ability to post the marked-up span to backend
+
+Backend server: built using Python Flask
+functionalities:
+1) respond to GET /doc/documents with list of documents
+2) respond to GET /doc/document?id=** with document corresponding to id=**
+3) accept POST /doc/document?id=** with data mark up data
+4) write a markup object to a file
+
+
+File would be collection of markup JSON objects
