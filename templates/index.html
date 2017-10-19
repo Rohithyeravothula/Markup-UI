@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Markup UI</title>
+</head>
+<body>
+    <script src="home.js"></script>
+    <input type="search" value="The sentence goes here and I need markup" name="sentence">
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Markup UI</title>
+</head>
+<body>
+
+	<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/annotator.min.css') }}"> -->
+
+	<div id="content" style="position: absolute;margin-top: 73px">This is a sample text to annotate</div>
+
+	<!-- see if you can downgrade this  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">
+	<script src="http://assets.annotateit.org/annotator/v1.2.5/annotator-full.min.js"></script>
+	<!-- <script src="{{ url_for('static', filename='js/annotator-full.min.js') }}"></script> -->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

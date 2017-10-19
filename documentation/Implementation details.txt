@@ -1,9 +1,9 @@
-
 document: a document with text (collection of sentences)
 		ex:
 			document = {
 			"id" -> "12345",
-			"body" -> "lorem ipsum, lorem ipsumlorem ipsum. lorem ipsumlorem ipsum"
+			"body" -> ["lorem ipsum lorem ipsum", "lorem ipsum lorem ipsum"],
+			"offsets" -> []
 			}
 
 sentences: text split by full stops (.)
@@ -11,13 +11,13 @@ sentences: text split by full stops (.)
 			sentense = {
 			"id" -> document id ,
 			"body" -> "Due to heavy rains in LA, the Airport will remain closed"
+			"offset" -> 
 			}
 			
 markup: contains sentence, markups
         ex: 
             markup = {
-            "id" -> document id
-            "sentense" -> "Due to heavy rains in LA, the Airport will remain closed"
+            "sentense" -> sentense (mentioned above, contains docId, sentense text, offsets)
             "cause" -> ["heavy rains"]
             "effect" -> ["Airport will remain closed"]
             }
@@ -32,9 +32,9 @@ functionalities:
 
 Backend server: built using Python Flask
 functionalities:
-1) respond to GET /doc/documents with list of documents
-2) respond to GET /doc/document?id=** with document corresponding to id=**
-3) accept POST /doc/document?id=** with data mark up data
+1) respond to GET /documents with list of documents
+2) respond to GET /document?id=** with document corresponding to id=**
+3) accept POST /document?id=** with data mark up data
 4) write a markup object to a file
 
 
